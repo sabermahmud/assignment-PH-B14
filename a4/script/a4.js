@@ -35,21 +35,21 @@ const getTrafficAction = (light) => {
     }
     return "Go";
 };
-console.log(getTrafficAction("red"));
-/*
-Problem 5 — Quiz Score Summary
-এখানে একজন student's quiz-এর সব score একটি array হিসেবে দেওয়া হবে।
-তোমাকে দুটি তথ্যসহ একটি result return করতে হবে:
-total → সব score-এর যোগফল
-average → scoreগুলোর গড়
-যেমন:
-[8, 9, 7, 10]
-এর ক্ষেত্রে:
-total = 34
-average = 8.5
-আর array যদি empty হয়:
-[]
-তাহলে:
-total = 0
-average = 0
-*/
+const getQuizSummary = (scores) => {
+    const totalScores = scores.reduce((accumulator, currentValue) => {
+        return accumulator + currentValue;
+    }, 0);
+    const scoreAverage = totalScores / scores.length;
+    if (scores.length === 0) {
+        return {
+            total: totalScores,
+            average: 0
+        };
+    }
+    else {
+        return {
+            total: totalScores,
+            average: scoreAverage
+        };
+    }
+};
