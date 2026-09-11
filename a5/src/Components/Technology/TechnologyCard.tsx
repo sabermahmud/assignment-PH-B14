@@ -1,11 +1,11 @@
-import type { DataType } from "../../Type/Type";
+import type { TechDataType } from "../../Type/Type";
 
 export interface TechnologyCardProps {
-  technology: DataType[];
+  technology: TechDataType[];
 }
 
 export default function TechnologyCard({ technology }: TechnologyCardProps) {
-  const { logo, name, description, category, level, rating, badge } =
+  const {logo,  name, description, category, level, rating, badge } =
     technology;
 
   return (
@@ -29,7 +29,7 @@ export default function TechnologyCard({ technology }: TechnologyCardProps) {
         {/* Name + Category */}
         <div className="mb-3">
           <div className="mb-2 flex items-center justify-between gap-3">
-            <h2 className="text-xl font-bold text-slate-900 dark:text-white">
+            <h2 className="text-xl font-bold bg-linear-to-bl from-violet-500 to-fuchsia-500 bg-clip-text text-transparent ">
               {name}
             </h2>
 
@@ -38,7 +38,7 @@ export default function TechnologyCard({ technology }: TechnologyCardProps) {
             </span>
           </div>
 
-          <p className="line-clamp-3 text-sm leading-6 text-slate-600 dark:text-slate-400">
+          <p className="line-clamp-3 text-sm leading-6 text-slate-900 dark:text-black">
             {description}
           </p>
         </div>
