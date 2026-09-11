@@ -7,7 +7,7 @@ export interface HeroProps {
 export default function Hero() {
   return (
     <>
-      <section className="flex items-center max-w-7xl mx-auto p-4">
+      <section className="flex items-center justify-between max-w-7xl mx-auto p-4 ">
         {/* hero dialog */}
         <div className="w-full">
           <h1 className="text-[60px] font-extrabold">
@@ -21,9 +21,10 @@ export default function Hero() {
             them side by side, and put together the stack that fits your next
             project.
           </p>
-          <div>
+          {/* Cta btns */}
+          <div className="mt-8 flex gap-6">
             <button className="bg-linear-65 from-[#F97316] to-[#EC4899] px-4 py-2 rounded-2xl">Explore Technologies</button>
-            <button>Learn More</button>
+            <button className="border-2 px-4 py-2 rounded-2xl">Learn More</button>
           </div>
         </div>
         {/* hero img */}
