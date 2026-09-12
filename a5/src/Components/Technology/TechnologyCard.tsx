@@ -1,19 +1,37 @@
+import type { Dispatch, SetStateAction } from "react";
 import type { TechDataType } from "../../Type/Type";
 
 export interface TechnologyCardProps {
   technology: TechDataType[];
+  addedToStack: TechDataType[];
+  setAddedToStack: Dispatch<SetStateAction<TechDataType[]>>;
 }
 
-export default function TechnologyCard({ technology }: TechnologyCardProps) {
-  const {logo,  name, description, category, level, rating, badge } =
+export default function TechnologyCard({
+  technology,
+  addedToStack,
+  setAddedToStack,
+}: TechnologyCardProps) {
+  const { logo, name, description, category, level, rating, badge } =
     technology;
+
+  
+    const handleAdd = () => {
+      const alreadyAdded = addedToStack.some(
+        (item) => item.id === technology.id,
+      );
+
+      if (alreadyAdded) return;
+
+      setAddedToStack([...addedToStack, technology]);
+    };
 
   return (
     <>
       <div className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-xl">
         {/* Logo + Badge */}
         <div className="mb-5 flex items-start justify-between">
-          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-100 p-3 dark:bg-slate-800">
+          <div className="flex h-16 w-16 items-center justify-center rounded-2xl p-3">
             <img
               src={logo}
               alt={`${name} logo`}
@@ -38,13 +56,13 @@ export default function TechnologyCard({ technology }: TechnologyCardProps) {
             </span>
           </div>
 
-          <p className="line-clamp-3 text-sm leading-6 text-slate-900 dark:text-black">
+          <p className="line-clamp-3 text-sm leading-6 text-gray-900">
             {description}
           </p>
         </div>
 
         {/* Bottom Information */}
-        <div className="mt-auto border-t border-slate-200 pt-4 dark:border-slate-800">
+        <div className="mt-auto border-t border-slate-200 pt-4 ">
           <div className="flex items-center justify-between">
             {/* Level */}
             <div>
@@ -68,6 +86,15 @@ export default function TechnologyCard({ technology }: TechnologyCardProps) {
               </div>
             </div>
           </div>
+        </div>
+        <div className="w-full">
+          {/* Add Buttons */}
+          <button
+            onClick={handleAdd}
+            className="bg-blue-600 hover:bg-purple-600 px-4 py-2 rounded-2xl w-full text-white"
+          >
+            Add to Stack
+          </button>
         </div>
       </div>
     </>
