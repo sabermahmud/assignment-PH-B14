@@ -1,4 +1,4 @@
-import type { Dispatch, SetStateAction } from "react";
+import { useState, type Dispatch, type SetStateAction } from "react";
 import type { TechDataType } from "../../Type/Type";
 
 export interface TechnologyCardProps {
@@ -12,6 +12,8 @@ export default function TechnologyCard({
   addedToStack,
   setAddedToStack,
 }: TechnologyCardProps) {
+  const [isSelected, setIsSelected] = useState<boolean>(false)
+
   const { logo, name, description, category, level, rating, badge } =
     technology;
 
@@ -21,11 +23,12 @@ export default function TechnologyCard({
     if (alreadyAdded) return;
 
     setAddedToStack([...addedToStack, technology]);
+    setIsSelected(true)
   };
 
   return (
     <>
-      <div className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-xl">
+      <div className={`group flex h-full flex-col rounded-2xl border ${isSelected ? " border-2 border-blue-500" : "border-slate-200 transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-xl"} bg-white p-5 shadow-sm `}>
         {/* Logo + Badge */}
         <div className="mb-5 flex items-start justify-between">
           <div className="flex h-16 w-16 items-center justify-center rounded-2xl p-3">
@@ -88,7 +91,9 @@ export default function TechnologyCard({
           {/* Add Buttons */}
           <button
             onClick={handleAdd}
-            className="bg-blue-600 hover:bg-purple-600 px-4 py-2 rounded-2xl w-full text-white mt-6"
+            disabled={isSelected}
+            className={`bg-blue-600  px-4 py-2 rounded-2xl w-full text-white mt-6 ${isSelected? "bg-pink-600" : "bg-blue-600 hover:bg-purple-600" } `}
+            
           >
             Add to Stack
           </button>
