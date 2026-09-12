@@ -46,7 +46,8 @@ function App() {
             </Suspense>
           </div>
           <div className="col-span-1 mt-4">
-            <YourStack addedToStack={addedToStack} />
+            <YourStack addedToStack={addedToStack} 
+            setAddedToStack={setAddedToStack}  />
           </div>
         </div>
       </div>

@@ -16,7 +16,7 @@ export default function Hero() {
               Development Stack
             </span>
           </h1>
-          <p>
+          <p className="text-gray-500">
             Explore frontend, backend, database, and tooling options, compare
             them side by side, and put together the stack that fits your next
             project.
@@ -24,7 +24,7 @@ export default function Hero() {
           {/* Cta btns */}
           <div className="mt-8 flex gap-6">
             <button className="bg-linear-65 from-[#F97316] to-[#EC4899] px-4 py-2 rounded-2xl">Explore Technologies</button>
-            <button className="border-2 px-4 py-2 rounded-2xl">Learn More</button>
+            <button className="border border-gray-400 px-4 py-2 rounded-2xl text-gray-500">Learn More</button>
           </div>
         </div>
         {/* hero img */}
