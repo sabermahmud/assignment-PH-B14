@@ -9,13 +9,14 @@ export default function YourStack({addedToStack}:YourStackProps) {
     console.log(addedToStack)
   return (
     <>
-      <div className=" border-2 border-gray-200 p-4 rounded-2xl ">
-        <h3 className="text-xl font-bold ">Your Stack</h3>
-        <div>
+      <div className=" border-2 border-gray-200 p-4 rounded-2xl mt-6">
+        <h3 className="text-xl font-bold my-6">Your Stack</h3>
+        <div className="">
             {
                 addedToStack.map(stack=><YourStackCard stack={stack} key={stack.id}/>)
             }
         </div>
+        <button className="text-red-500 text-center w-full p-2 border-2">Remove All</button>
       </div>
     </>
   );

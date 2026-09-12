@@ -7,7 +7,7 @@ export interface HeroProps {
 export default function Hero() {
   return (
     <>
-      <section className="flex items-center justify-between max-w-7xl mx-auto p-4 ">
+      <section className="flex items-center justify-between max-w-7xl mx-auto my-6 p-4 ">
         {/* hero dialog */}
         <div className="w-full">
           <h1 className="text-[60px] font-extrabold">

@@ -15,7 +15,7 @@ function App() {
   const [addedToStack, setAddedToStack] = useState<TechDataType[]>([]);
 
   return (
-    <div className="shadow-2xl max-w-7xl mx-auto">
+    <div className=" max-w-7xl mx-auto px-4">
       <Navbar />
       <Hero />
       <div>
@@ -38,9 +38,10 @@ function App() {
                 ></svg>
               }
             >
-              <TechnologySection 
-              techDataPromise={techDataPromise()}
-              addedToStack={addedToStack} setAddedToStack = {setAddedToStack}
+              <TechnologySection
+                techDataPromise={techDataPromise()}
+                addedToStack={addedToStack}
+                setAddedToStack={setAddedToStack}
               />
             </Suspense>
           </div>
@@ -49,6 +50,7 @@ function App() {
           </div>
         </div>
       </div>
+      
     </div>
   );
 }

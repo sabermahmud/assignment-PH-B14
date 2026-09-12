@@ -11,12 +11,12 @@ export interface TechnologySectionProps {
 export default function TechnologySection({
   techDataPromise,
   addedToStack,
-  setAddedToStack,
+  setAddedToStack
 }: TechnologySectionProps) {
   const techData = use(techDataPromise);
   return (
     <>
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 p-4">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 p-4 my-6">
         {techData.map((technology) => (
           <TechnologyCard
             technology={technology}

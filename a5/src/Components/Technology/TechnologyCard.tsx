@@ -2,7 +2,7 @@ import type { Dispatch, SetStateAction } from "react";
 import type { TechDataType } from "../../Type/Type";
 
 export interface TechnologyCardProps {
-  technology: TechDataType[];
+  technology: TechDataType;
   addedToStack: TechDataType[];
   setAddedToStack: Dispatch<SetStateAction<TechDataType[]>>;
 }
@@ -15,16 +15,13 @@ export default function TechnologyCard({
   const { logo, name, description, category, level, rating, badge } =
     technology;
 
-  
-    const handleAdd = () => {
-      const alreadyAdded = addedToStack.some(
-        (item) => item.id === technology.id,
-      );
+  const handleAdd = () => {
+    const alreadyAdded = addedToStack.some((item) => item.id === technology.id);
 
-      if (alreadyAdded) return;
+    if (alreadyAdded) return;
 
-      setAddedToStack([...addedToStack, technology]);
-    };
+    setAddedToStack([...addedToStack, technology]);
+  };
 
   return (
     <>
@@ -56,31 +53,31 @@ export default function TechnologyCard({
             </span>
           </div>
 
-          <p className="line-clamp-3 text-sm leading-6 text-gray-900">
+          <p className="line-clamp-3 text-sm leading-6 text-gray-500">
             {description}
           </p>
         </div>
 
         {/* Bottom Information */}
-        <div className="mt-auto border-t border-slate-200 pt-4 ">
+        <div className="mt-auto border-t border-gray-400 pt-4 ">
           <div className="flex items-center justify-between">
             {/* Level */}
             <div>
-              <p className="mb-1 text-xs text-slate-400">Difficulty</p>
+              <p className="mb-1 text-xs text-gray-500">Difficulty</p>
 
-              <p className="text-sm font-semibold text-slate-700 dark:text-slate-200">
+              <p className="text-sm font-semibold text-slate-500 ">
                 {level}
               </p>
             </div>
 
             {/* Rating */}
             <div className="text-right">
-              <p className="mb-1 text-xs text-slate-400">Rating</p>
+              <p className="mb-1 text-xs text-gray-400">Rating</p>
 
               <div className="flex items-center gap-1">
                 <span className="text-yellow-400">★</span>
 
-                <span className="text-sm font-bold text-slate-800 dark:text-white">
+                <span className="text-sm font-bold text-slate-800 ">
                   {rating}
                 </span>
               </div>
@@ -91,7 +88,7 @@ export default function TechnologyCard({
           {/* Add Buttons */}
           <button
             onClick={handleAdd}
-            className="bg-blue-600 hover:bg-purple-600 px-4 py-2 rounded-2xl w-full text-white"
+            className="bg-blue-600 hover:bg-purple-600 px-4 py-2 rounded-2xl w-full text-white mt-6"
           >
             Add to Stack
           </button>
