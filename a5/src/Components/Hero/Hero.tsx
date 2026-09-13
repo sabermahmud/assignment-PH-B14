@@ -10,7 +10,7 @@ export default function Hero() {
       <section className="flex flex-col md:flex-row items-center justify-between max-w-7xl w-full mx-auto my-6 p-4 ">
         {/* hero dialog */}
         <div className="w-full">
-          <h1 className="text-xl lg:text-[60px] font-extrabold">
+          <h1 className="text-xl md:text-4xl lg:text-[60px] font-extrabold mb-4">
             Build Your Ideal{" "}
             <span className="bg-linear-to-bl from-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
               Development Stack
@@ -23,7 +23,7 @@ export default function Hero() {
           </p>
           {/* Cta btns */}
           <div className="mt-8 flex gap-6">
-            <button className="bg-linear-65 from-[#F97316] to-[#EC4899] px-4 py-2 rounded-2xl">Explore Technologies</button>
+            <button className="bg-linear-to-r from-indigo-500 via-violet-500 to-fuchsia-500 text-white px-4 py-2 rounded-2xl">Explore Technologies</button>
             <button className="border border-gray-400 px-4 py-2 rounded-2xl text-gray-500">Learn More</button>
           </div>
         </div>
