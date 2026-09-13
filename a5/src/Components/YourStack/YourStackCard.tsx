@@ -31,7 +31,7 @@ export default function YourStackCard({
 
       <div className="w-full">
         <h3 className="text-lg font-bold">{stack.name}</h3>
-        <p className="text-xs">{stack.badge}</p>
+        <p className="text-xs">{stack.category}</p>
       </div>
 
       <div>
