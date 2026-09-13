@@ -1,6 +1,7 @@
 import { MdDelete } from "react-icons/md";
 import type { TechDataType } from "../../Type/Type";
 import type { Dispatch, SetStateAction } from "react";
+import { toast } from "react-toastify";
 
 export interface YourStackCardProps {
   stack: TechDataType;

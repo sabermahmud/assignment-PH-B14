@@ -4,6 +4,7 @@ import type { TechDataType } from "./Type/Type";
 import Navbar from "./Components/Navbar/Navbar";
 import Hero from "./Components/Hero/Hero";
 import YourStack from "./Components/YourStack/YourStack";
+import { ToastContainer } from "react-toastify";
 
 const techDataPromise = async (): Promise<TechDataType[]> => {
   const response = await fetch("/technology.json");
@@ -12,12 +13,14 @@ const techDataPromise = async (): Promise<TechDataType[]> => {
 };
 
 function App() {
+  
   const [addedToStack, setAddedToStack] = useState<TechDataType[]>([]);
 
   return (
     <div className=" max-w-7xl mx-auto px-4">
       <Navbar />
       <Hero />
+      <ToastContainer/>
       <div>
         <div>
           <h2 className="text-4xl font-bold">

@@ -1,5 +1,6 @@
 import { useState, type Dispatch, type SetStateAction } from "react";
 import type { TechDataType } from "../../Type/Type";
+import { toast } from "react-toastify";
 
 export interface TechnologyCardProps {
   technology: TechDataType;
@@ -24,6 +25,7 @@ export default function TechnologyCard({
 
     setAddedToStack([...addedToStack, technology]);
     setIsSelected(true)
+    toast.success(`"${name}" successfully Added to Your Stack. `)
   };
 
   return (
