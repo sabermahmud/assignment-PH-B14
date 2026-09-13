@@ -9,6 +9,9 @@ export interface YourStackProps {
 
 export default function YourStack({addedToStack, setAddedToStack}:YourStackProps) {
     console.log(addedToStack)
+    const handleRemoveAll = () => {
+      setAddedToStack([])
+    }
   return (
     <>
       <div className=" border-2 border-gray-200 p-4 rounded-2xl mt-6">
@@ -20,7 +23,9 @@ export default function YourStack({addedToStack, setAddedToStack}:YourStackProps
                   setAddedToStack={setAddedToStack} />)
             }
         </div>
-        <button className="text-red-500 text-center w-full p-2 border-2">Remove All</button>
+        <button
+        onClick={handleRemoveAll}
+        className="text-red-500 text-center w-full p-2 border-2">Remove All</button>
       </div>
     </>
   );

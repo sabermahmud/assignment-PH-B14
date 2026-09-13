@@ -6,14 +6,14 @@ import Hero from "./Components/Hero/Hero";
 import YourStack from "./Components/YourStack/YourStack";
 import { ToastContainer } from "react-toastify";
 
-const techDataPromise = async (): Promise<TechDataType[]> => {
+const fetchTechData = async (): Promise<TechDataType[]> => {
   const response = await fetch("/technology.json");
   const data = await response.json();
   return data;
 };
 
 function App() {
-  
+  const [techDataPromise] = useState(()=> fetchTechData ())
   const [addedToStack, setAddedToStack] = useState<TechDataType[]>([]);
 
   return (
@@ -42,7 +42,7 @@ function App() {
               }
             >
               <TechnologySection
-                techDataPromise={techDataPromise()}
+                techDataPromise={techDataPromise}
                 addedToStack={addedToStack}
                 setAddedToStack={setAddedToStack}
               />
