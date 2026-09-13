@@ -1,4 +1,4 @@
-import type { Dispatch, SetStateAction } from "react";
+import { useState, type Dispatch, type SetStateAction } from "react";
 import type { TechDataType } from "../../Type/Type";
 import YourStackCard from "./YourStackCard";
 import { toast } from "react-toastify";
@@ -13,9 +13,10 @@ export default function YourStack({
   addedToStack,
   setAddedToStack,
 }: YourStackProps) {
-  console.log(addedToStack);
+  const [isAllDeleted, setIsAllDeleted] = useState<boolean>(false)
   const handleRemoveAll = () => {
     setAddedToStack([]);
+    setIsAllDeleted(true)
     toast.error("All Stacks are deleted Successfully")
   
   };
@@ -44,6 +45,7 @@ export default function YourStack({
         )}
         <button
           onClick={handleRemoveAll}
+          disabled={isAllDeleted}
           className="text-red-500 text-center w-full p-2 border-2"
         >
           Remove All
