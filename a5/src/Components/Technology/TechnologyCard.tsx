@@ -27,7 +27,7 @@ export default function TechnologyCard({
     setIsSelected(true)
     toast.success(`"${name}" successfully Added to Your Stack. `)
   };
-
+  
   return (
     <>
       <div className={`group flex h-full flex-col rounded-2xl border ${isSelected ? " border-2 border-blue-500" : "border-slate-200 transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-xl"} bg-white p-5 shadow-sm `}>
@@ -94,7 +94,7 @@ export default function TechnologyCard({
           <button
             onClick={handleAdd}
             disabled={isSelected}
-            className={`bg-blue-600  px-4 py-2 rounded-2xl w-full text-white mt-6 ${isSelected? "bg-pink-600" : "bg-blue-600 hover:bg-purple-600" } `}
+            className={`bg-blue-600  px-4 py-2 rounded-2xl w-full text-white mt-6 ${isSelected? "bg-pink-600" : "bg-linear-to-r from-indigo-500 via-violet-500 to-fuchsia-500 hover:bg-purple-600" } `}
             
           >
             Add to Stack

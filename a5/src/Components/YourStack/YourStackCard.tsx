@@ -1,7 +1,7 @@
 import { MdDelete } from "react-icons/md";
 import type { TechDataType } from "../../Type/Type";
 import type { Dispatch, SetStateAction } from "react";
-import { toast } from "react-toastify";
+
 
 export interface YourStackCardProps {
   stack: TechDataType;
@@ -25,7 +25,7 @@ export default function YourStackCard({
 
   return (
     <div className="flex gap-4 items-center p-4 border-b-2 border-gray-100">
-      <img className="w-[50px]" src={stack.logo} alt={stack.name} />
+      <img className="w-12.5" src={stack.logo} alt={stack.name} />
 
       <div className="w-full">
         <h3 className="text-lg font-bold">{stack.name}</h3>

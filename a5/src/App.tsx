@@ -5,6 +5,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import Hero from "./Components/Hero/Hero";
 import YourStack from "./Components/YourStack/YourStack";
 import { ToastContainer } from "react-toastify";
+import Footer from "./Components/Footer/Footer";
 
 const fetchTechData = async (): Promise<TechDataType[]> => {
   const response = await fetch("/technology.json");
@@ -54,7 +55,7 @@ function App() {
           </div>
         </div>
       </div>
-      
+      <Footer/>
     </div>
   );
 }
