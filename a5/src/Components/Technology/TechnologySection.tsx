@@ -11,7 +11,7 @@ export interface TechnologySectionProps {
 export default function TechnologySection({
   techDataPromise,
   addedToStack,
-  setAddedToStack
+  setAddedToStack,
 }: TechnologySectionProps) {
   const techData = use(techDataPromise);
   return (

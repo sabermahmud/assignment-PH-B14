@@ -1,26 +1,28 @@
 import { MdDelete } from "react-icons/md";
 import type { TechDataType } from "../../Type/Type";
 import type { Dispatch, SetStateAction } from "react";
-
+import { toast } from "react-toastify";
 
 export interface YourStackCardProps {
   stack: TechDataType;
   addedToStack: TechDataType[];
   setAddedToStack: Dispatch<SetStateAction<TechDataType[]>>;
+  
 }
 
 export default function YourStackCard({
   stack,
   addedToStack,
   setAddedToStack,
+  
 }: YourStackCardProps) {
-
   const handleDeleteOne = (stackedTech: TechDataType) => {
     const restStackedTechs = addedToStack.filter(
-      (selectedTech) => selectedTech.name !== stackedTech.name
+      (selectedTech) => selectedTech.id !== stackedTech.id,
     );
 
     setAddedToStack(restStackedTechs);
+    toast.error(`${stackedTech.name} deleted successfully`);
   };
 
   return (

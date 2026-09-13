@@ -7,10 +7,10 @@ export interface HeroProps {
 export default function Hero() {
   return (
     <>
-      <section className="flex items-center justify-between max-w-7xl mx-auto my-6 p-4 ">
+      <section className="flex flex-col md:flex-row items-center justify-between max-w-7xl w-full mx-auto my-6 p-4 ">
         {/* hero dialog */}
         <div className="w-full">
-          <h1 className="text-[60px] font-extrabold">
+          <h1 className="text-xl lg:text-[60px] font-extrabold">
             Build Your Ideal{" "}
             <span className="bg-linear-to-bl from-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
               Development Stack

@@ -10,15 +10,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="mb-5 flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-orange-400 via-pink-500 to-violet-600 shadow-md shadow-pink-200">
-                <span className="text-lg font-black text-white">
-                  DS
-                </span>
-              </div>
-
-              <h2 className="bg-gradient-to-r from-orange-400 via-pink-500 to-violet-600 bg-clip-text text-2xl font-black text-transparent">
-                Dev Stack
-              </h2>
+              <img src={Logo} alt="" />
             </div>
 
             <p className="max-w-md text-sm leading-7 text-slate-500">

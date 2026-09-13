@@ -1,10 +1,12 @@
 import type { Dispatch, SetStateAction } from "react";
 import type { TechDataType } from "../../Type/Type";
 import YourStackCard from "./YourStackCard";
+import { toast } from "react-toastify";
 
 export interface YourStackProps {
   addedToStack: TechDataType[];
   setAddedToStack: Dispatch<SetStateAction<TechDataType[]>>;
+
 }
 
 export default function YourStack({
@@ -14,6 +16,8 @@ export default function YourStack({
   console.log(addedToStack);
   const handleRemoveAll = () => {
     setAddedToStack([]);
+    toast.error("All Stacks are deleted Successfully")
+  
   };
   return (
     <>
@@ -22,7 +26,9 @@ export default function YourStack({
         <p>{addedToStack.length} Technology Selected</p>
 
         {addedToStack.length === 0 ? (
-          <p className="p-4 border-2 border-slate-300 text-gray-500 rounded-2xl my-6">Your stack is empty.</p>
+          <p className="p-4 border-2 border-slate-300 text-gray-500 rounded-2xl my-6">
+            Your stack is empty.
+          </p>
         ) : (
           <div>
             {addedToStack.map((stack) => (
@@ -31,6 +37,7 @@ export default function YourStack({
                 key={stack.id}
                 addedToStack={addedToStack}
                 setAddedToStack={setAddedToStack}
+
               />
             ))}
           </div>

@@ -6,22 +6,30 @@ import Hero from "./Components/Hero/Hero";
 import YourStack from "./Components/YourStack/YourStack";
 import { ToastContainer } from "react-toastify";
 import Footer from "./Components/Footer/Footer";
+import { ThreeDots } from "react-loader-spinner";
+
+
+
 
 const fetchTechData = async (): Promise<TechDataType[]> => {
+  // data fetch
   const response = await fetch("/technology.json");
   const data = await response.json();
   return data;
 };
 
 function App() {
-  const [techDataPromise] = useState(()=> fetchTechData ())
+  // states
+  const [techDataPromise] = useState(() => fetchTechData());
   const [addedToStack, setAddedToStack] = useState<TechDataType[]>([]);
+
+
 
   return (
     <div className=" max-w-7xl mx-auto px-4">
       <Navbar />
       <Hero />
-      <ToastContainer/>
+      <ToastContainer />
       <div>
         <div>
           <h2 className="text-4xl font-bold">
@@ -32,14 +40,11 @@ function App() {
           </h2>
           <p>Pick one technology per category to build your ideal stack.</p>
         </div>
-        <div className="grid grid-cols-4">
+        <div className="grid grid-cols-1 md:grid-cols-4">
           <div className="col-span-3">
             <Suspense
               fallback={
-                <svg
-                  className="mr-3 size-5 animate-spin ..."
-                  viewBox="0 0 24 24"
-                ></svg>
+                <ThreeDots/>
               }
             >
               <TechnologySection
@@ -50,12 +55,14 @@ function App() {
             </Suspense>
           </div>
           <div className="col-span-1 mt-4">
-            <YourStack addedToStack={addedToStack} 
-            setAddedToStack={setAddedToStack}  />
+            <YourStack
+              addedToStack={addedToStack}
+              setAddedToStack={setAddedToStack}
+            />
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
