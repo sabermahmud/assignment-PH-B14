@@ -91,7 +91,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {show && (
-        <div className="border-t border-gray-100 bg-white px-6 py-4 md:hidden">
+        <div className="border-t border-gray-100 bg-white/10 backdrop-blur-2xl px-6 py-4 md:hidden">
           <ul className="flex flex-col gap-4">
             <li>
               <a href="#home" onClick={closeMenu}>
