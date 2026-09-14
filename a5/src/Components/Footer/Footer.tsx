@@ -1,147 +1,131 @@
-import Logo from "/logo-text.png";
+import logo from "/logo-text.png";
+
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-200 bg-white text-slate-600">
-      <div className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
+    <footer className="mt-16 border-t border-gray-200 pt-12 mx-4">
+      <div className="grid grid-cols-1 gap-10 pb-10 md:grid-cols-2 lg:grid-cols-5">
+        {/* Brand */}
+        <div className="lg:col-span-2">
+          <img
+            src={logo}
+            alt="Dev Stack logo"
+            className="mb-4 w-32"
+          />
 
-        {/* Main Footer */}
-        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
+          <p className="max-w-md text-sm leading-6 text-gray-500">
+            Curated tools, technologies, and resources for
+            developers building modern software.
+          </p>
 
-          {/* Brand */}
-          <div className="lg:col-span-2">
-            <div className="mb-5 flex items-center gap-3">
-              <img src={Logo} alt="" />
-            </div>
+          <div className="mt-5 flex gap-4">
+            <a
+              href="#"
+              className="text-sm text-gray-500 hover:text-pink-500"
+            >
+              GitHub
+            </a>
 
-            <p className="max-w-md text-sm leading-7 text-slate-500">
-              Curated tools, technologies, and resources for developers
-              building modern software.
-            </p>
+            <a
+              href="#"
+              className="text-sm text-gray-500 hover:text-pink-500"
+            >
+              Twitter
+            </a>
 
-            {/* Social Links */}
-            <div className="mt-7 flex flex-wrap gap-3">
-              <a
-                href="#"
-                className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-600 transition hover:border-slate-300 hover:bg-slate-100 hover:text-slate-900"
-              >
-                GitHub
-              </a>
-
-              <a
-                href="#"
-                className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-600 transition hover:border-slate-300 hover:bg-slate-100 hover:text-slate-900"
-              >
-                Twitter
-              </a>
-
-              <a
-                href="#"
-                className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-600 transition hover:border-slate-300 hover:bg-slate-100 hover:text-slate-900"
-              >
-                LinkedIn
-              </a>
-            </div>
-          </div>
-
-          {/* Product */}
-          <div>
-            <h3 className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-slate-900">
-              Product
-            </h3>
-
-            <ul className="space-y-3 text-sm">
-              <li>
-                <a href="#" className="transition hover:text-violet-600">
-                  Home
-                </a>
-              </li>
-
-              <li>
-                <a href="#" className="transition hover:text-violet-600">
-                  Technologies
-                </a>
-              </li>
-
-              <li>
-                <a href="#" className="transition hover:text-violet-600">
-                  Projects
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Company + Legal */}
-          <div className="grid grid-cols-2 gap-8">
-
-            {/* Company */}
-            <div>
-              <h3 className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-slate-900">
-                Company
-              </h3>
-
-              <ul className="space-y-3 text-sm">
-                <li>
-                  <a href="#" className="transition hover:text-violet-600">
-                    About
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#" className="transition hover:text-violet-600">
-                    Contact
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#" className="transition hover:text-violet-600">
-                    Careers
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Legal */}
-            <div>
-              <h3 className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-slate-900">
-                Legal
-              </h3>
-
-              <ul className="space-y-3 text-sm">
-                <li>
-                  <a href="#" className="transition hover:text-violet-600">
-                    Privacy Policy
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#" className="transition hover:text-violet-600">
-                    Terms of Service
-                  </a>
-                </li>
-              </ul>
-            </div>
-
+            <a
+              href="#"
+              className="text-sm text-gray-500 hover:text-pink-500"
+            >
+              LinkedIn
+            </a>
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="my-10 h-px bg-slate-200" />
+        {/* Product */}
+        <div>
+          <h3 className="mb-4 font-bold">PRODUCT</h3>
 
-        {/* Bottom Bar */}
-        <div className="flex flex-col gap-4 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+          <ul className="space-y-3 text-sm text-gray-500">
+            <li>
+              <a href="#home" className="hover:text-pink-500">
+                Home
+              </a>
+            </li>
 
-          <p>© 2026 Dev Stack. All rights reserved.</p>
+            <li>
+              <a
+                href="#technologies"
+                className="hover:text-pink-500"
+              >
+                Technologies
+              </a>
+            </li>
 
-          <div className="flex gap-6">
-            <a href="#" className="transition hover:text-violet-600">
-              Privacy
-            </a>
+            <li>
+              <a href="#projects" className="hover:text-pink-500">
+                Projects
+              </a>
+            </li>
+          </ul>
+        </div>
 
-            <a href="#" className="transition hover:text-violet-600">
-              Terms
-            </a>
-          </div>
+        {/* Company */}
+        <div>
+          <h3 className="mb-4 font-bold">COMPANY</h3>
 
+          <ul className="space-y-3 text-sm text-gray-500">
+            <li>
+              <a href="#about" className="hover:text-pink-500">
+                About
+              </a>
+            </li>
+
+            <li>
+              <a href="#contact" className="hover:text-pink-500">
+                Contact
+              </a>
+            </li>
+
+            <li>
+              <a href="#" className="hover:text-pink-500">
+                Careers
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Legal */}
+        <div>
+          <h3 className="mb-4 font-bold">LEGAL</h3>
+
+          <ul className="space-y-3 text-sm text-gray-500">
+            <li>
+              <a href="#" className="hover:text-pink-500">
+                Privacy Policy
+              </a>
+            </li>
+
+            <li>
+              <a href="#" className="hover:text-pink-500">
+                Terms of Service
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Bottom */}
+      <div className="flex flex-col gap-3 border-t border-gray-200 py-6 text-sm text-gray-500 md:flex-row md:items-center md:justify-between">
+        <p>© 2026 Dev Stack. All rights reserved.</p>
+
+        <div className="flex gap-4">
+          <a href="#" className="hover:text-pink-500">
+            Privacy
+          </a>
+
+          <a href="#" className="hover:text-pink-500">
+            Terms
+          </a>
         </div>
       </div>
     </footer>
