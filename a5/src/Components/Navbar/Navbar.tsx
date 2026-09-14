@@ -15,7 +15,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur shadow ">
+    <nav className="sticky top-0 z-50 w-full bg-white/10 backdrop-blur-xl shadow ">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-2 py-4 md:px-4">
         {/* Mobile Menu Button / Desktop Logo */}
         <div className="flex items-center">

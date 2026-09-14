@@ -16,7 +16,7 @@ export default function TechnologySection({
   const techData = use(techDataPromise);
 
   return (
-    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 p-4">
+    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {techData.map((technology) => (
         <TechnologyCard
           key={technology.id}

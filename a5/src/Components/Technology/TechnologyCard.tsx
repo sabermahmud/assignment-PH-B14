@@ -23,6 +23,7 @@ export default function TechnologyCard({
     badge,
   } = technology;
 
+
   const isSelected = addedToStack.some(
     (item) => item.id === technology.id,
   );
@@ -32,6 +33,7 @@ export default function TechnologyCard({
       (item) => item.id === technology.id,
     );
 
+// This condition is only for extra safety, as the button is disabled after the first click and prevents duplicate function calls.
     if (alreadyAdded) {
       toast.warning(`"${name}" is already in your stack.`);
       return;
@@ -47,7 +49,7 @@ export default function TechnologyCard({
 
   return (
     <div
-      className={`group flex h-full flex-col rounded-2xl border bg-white p-5 shadow-sm transition duration-300 ${
+      className={`group flex h-full flex-col rounded-2xl border bg-white p-5 m-4 shadow-sm transition duration-300 ${
         isSelected
           ? "border-2 border-pink-500"
           : "border-slate-200 hover:-translate-y-1 hover:border-slate-300 hover:shadow-xl"
